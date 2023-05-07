@@ -8,9 +8,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # install dependencies
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip --root-user-action=ignore
 COPY ./requirements.txt /usr/src/app
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --root-user-action=ignore
 
 # copy project
 COPY . /usr/src/app
