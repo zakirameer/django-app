@@ -3,3 +3,12 @@ on:
   push:
     tags:
       - 'v*'
+jobs:
+  create-and-push-image:
+    runs-on: ubuntu-latest
+    steps:
+    
+- name: get version
+  id: get-version
+  run: |
+    echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
