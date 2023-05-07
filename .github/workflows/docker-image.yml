@@ -32,7 +32,7 @@ jobs:
     - name: install yq
       uses: mikefarah/yq@v4.15.1 
  
-    - name: update infra yaml file
+    - name: update deployment yaml file
       run: |
         cd dev
         yq e -i '.spec.template.spec.containers[0].image="zakkgeek/app-sample:${{ steps.get-version.outputs.VERSION }}"' deployment.yml
