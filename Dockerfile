@@ -13,8 +13,9 @@ COPY ./requirements.txt /usr/src/app
 RUN pip install -r requirements.txt --root-user-action=ignore
 
 # copy project
-COPY . /usr/src/app
+#COPY . /usr/src/app
 
+ADD custom_folder /usr/src/app
 EXPOSE 8000
 
 RUN python manage.py migrate
